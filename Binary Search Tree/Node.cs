@@ -9,9 +9,15 @@ namespace Binary_Search_Tree
     class Node
     {
         //Member Variables
+        public int data;
+        public Node leftNode;
+        public Node rightNode;
 
         //Constructor
-
+        public Node(int data)
+        {
+            this.data = data;
+        }
         //Member Methods
 
     }
