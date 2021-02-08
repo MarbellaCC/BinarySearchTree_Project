@@ -57,9 +57,35 @@ namespace Binary_Search_Tree
 
         }
 
-        public void Search()
+        public bool Search(Node nodeToFind)
         {
-
+            if(rootNode == null)
+            {
+                return false;
+            }
+            else
+            {
+                Node focusNode = rootNode;
+                while (true)
+                {
+                    if (nodeToFind.data.Equals(focusNode.data))
+                    {
+                        return true;
+                    }
+                    else if(nodeToFind.data < focusNode.data && focusNode.leftNode != null)
+                    {
+                        focusNode = focusNode.leftNode;
+                    }
+                    else if(nodeToFind.data > focusNode.data && focusNode.rightNode != null)
+                    {
+                        focusNode = focusNode.rightNode;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
         }
     }
 }
